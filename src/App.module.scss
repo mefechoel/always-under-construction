@@ -1,0 +1,85 @@
+.main {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: grid;
+	place-content: center;
+}
+
+.loremWrapper {
+	z-index: -1;
+	position: relative;
+	width: 24em;
+	height: 50vh;
+
+	--perspective: 12em;
+	--perspectiveShiftAmount: 2em;
+	--xShiftAmount: 5em;
+	--yShiftAmount: 2em;
+	--zShiftAmount: 2em;
+	--distance: 12em;
+	--angle: 90deg;
+	--positionZ: 0em;
+}
+
+.lorem {
+	user-select: none;
+	position: absolute;
+	inset: 0;
+	text-align: justify;
+	line-height: 1.5;
+	transition: transform 200ms ease-in-out;
+	transform: perspective(
+			calc(
+				(var(--perspectiveShiftAmount) * var(--shift-perspective, 0)) +
+					var(--perspective)
+			)
+		)
+		translate3d(
+			calc(
+				(var(--xShiftAmount) * var(--shift-x, 0)) +
+					(var(--distanceX) * var(--distance))
+			),
+			calc(
+				(var(--yShiftAmount) * var(--shift-y, 0)) +
+					(var(--distanceY) * var(--distance))
+			),
+			calc(
+				(var(--zShiftAmount) * var(--shift-z, 0)) +
+					(var(--distanceZ) * var(--distance))
+			)
+		)
+		rotate3d(var(--rotateX), var(--rotateY), var(--rotateZ), var(--angle))
+		translateZ(var(--positionZ));
+
+	--signX: 1;
+	--signY: 1;
+	--signZ: 1;
+	--distanceX: 0;
+	--distanceY: 0;
+	--distanceZ: 0;
+	--rotateX: 0;
+	--rotateY: 0;
+	--rotateZ: 0;
+}
+
+.lorem1 {
+	--distanceY: -1;
+	--rotateX: -1;
+}
+.lorem2 {
+	--distanceX: -1;
+	--rotateY: 1;
+}
+.lorem3 {
+	--distanceX: 1;
+	--rotateY: -1;
+}
+.lorem4 {
+	--distanceZ: -1;
+	--rotateZ: -1;
+}
+.lorem5 {
+	--distanceY: 1;
+	--rotateX: 1;
+}

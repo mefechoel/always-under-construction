@@ -1,0 +1,18 @@
+@use '../../styles/mq.scss';
+
+.wrapper .img {
+	--sizeOverride: 1rem;
+
+	@include mq.smallScreen {
+		--sizeOverride: calc(0.35 * var(--fontSize3));
+	}
+}
+
+.caption {
+	padding: 1em 1em;
+}
+
+.figure {
+	padding-top: calc(2 * var(--innerSpacing));
+	margin: 0;
+}

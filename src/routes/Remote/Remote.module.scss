@@ -1,0 +1,15 @@
+@use '../../styles/mq.scss';
+
+.wrapper .img {
+	--sizeOverride: 5rem;
+
+	@include mq.smallScreen {
+		--sizeOverride: calc(1.2 * var(--baseSize));
+	}
+
+	// If the browser supports max use it to get a more precise value.
+	// Otherwise the size might jump when changing screen sizes
+	@supports (width: max(1px, 2px)) {
+		--sizeOverride: max(5rem, calc(1.2 * var(--baseSize)));
+	}
+}

@@ -1,0 +1,10 @@
+.imgWrapper {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.coverImg {
+	margin-bottom: calc(0.3 * var(--fontSize2));
+}

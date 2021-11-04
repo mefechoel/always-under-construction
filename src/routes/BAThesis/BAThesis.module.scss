@@ -1,0 +1,21 @@
+@use '../../styles/mq.scss';
+
+.abstract {
+	color: var(--dimmedFontCol);
+	padding: 0 var(--sideSpacing);
+	column-width: 40ch;
+	column-gap: 2em;
+}
+
+.details {
+	margin-bottom: 1em;
+	cursor: pointer;
+}
+
+.wrapper .img {
+	--sizeOverride: calc(1.2 * var(--baseSize));
+
+	@include mq.smallScreen {
+		--sizeOverride: calc(1.5 * var(--baseSize));
+	}
+}
